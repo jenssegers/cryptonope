@@ -1,9 +1,18 @@
+let needles = [
+  'etherium',
+  'bitcoin',
+  'crypto',
+  'cryptocurrency',
+  'litecoin',
+  'ripple',
+];
+
 let replacements = [
   'cat',
   'dog',
   'bird',
   'snake',
-  'horse'
+  'horse',
 ];
 
 let elements = document.getElementsByTagName('*');
@@ -17,7 +26,7 @@ for (let i = 0; i < elements.length; i++) {
     if (node.nodeType === 3) {
       let text = node.nodeValue;
       let replacedText = text.replace(
-        /etherium|bitcoin|crypto/gi,
+        new RegExp('/' + needles.join('|') + '/gi'),
         replacements[Math.floor(Math.random() * replacements.length)]
       );
 
