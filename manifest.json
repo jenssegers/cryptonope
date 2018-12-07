@@ -1,0 +1,17 @@
+{
+"manifest_version": 2,
+    "name": "cryptonope",
+    "description": "Replace crypto words with random things",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
